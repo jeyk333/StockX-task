@@ -7,6 +7,7 @@ import RecentTrades from './RecentTrades';
 import AISignals from './AISignals';
 import ScrollAnimation from '../common/ScrollAnimation';
 import HeroSection from './HeroSection';
+import MarketSnapshot from './MarketSnapshot';
 import FeatureShowcase from './FeatureShowcase';
 import MarketHighlights from './MarketHighlights';
 import PlatformStats from './PlatformStats';
@@ -49,6 +50,11 @@ const Dashboard: React.FC = () => {
     <div className="space-y-12">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Market Snapshot */}
+      <ScrollAnimation>
+        <MarketSnapshot />
+      </ScrollAnimation>
 
       {/* Quick Stats */}
       <ScrollAnimation>

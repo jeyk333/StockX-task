@@ -308,6 +308,28 @@ See [ai-services/README.md](ai-services/README.md) for more details.
 - [User Guide](docs/user-guide/README.md)
 - [Security Documentation](docs/security/README.md)
 
+## 🔄 Recent Changes
+
+### Market Snapshot (Dashboard)
+
+Added a **Market Snapshot** section to the Dashboard (`/`) that fetches live data from the backend and displays key market metrics.
+
+**What it does:**
+- Calls `GET /api/market/data` using the shared Axios `api` instance on mount.
+- Displays **Active Tokens**, **Total Trades**, **Total Volume**, and **Avg Price** in a responsive 4-column grid.
+- Shows a human-readable **Last Updated** timestamp (local date/time).
+- Renders a **loading spinner** while the request is in flight.
+- Shows a styled **error message** with a Retry button if the backend is unreachable.
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `frontend/src/components/dashboard/MarketSnapshot.tsx` | New component — fetches and renders market data with loading/error states |
+| `frontend/src/components/dashboard/Dashboard.tsx` | Imported `MarketSnapshot` and added it after the Hero section |
+
+---
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
